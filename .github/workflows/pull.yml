@@ -1,8 +1,6 @@
 name: Pull
 
 on:
-  schedule:
-    - cron: '* * * * *'
   push:
     branches: [ master ]
   pull_request:
