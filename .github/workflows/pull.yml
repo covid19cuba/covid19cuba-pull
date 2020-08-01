@@ -3,11 +3,7 @@ name: Pull
 on:
 
   schedule:
-    - cron: '*/2 * * * *'
-
-  push:
-    branches:
-      - master
+    - cron: '*/3 * * * *'
 
 jobs:
   Pull:
