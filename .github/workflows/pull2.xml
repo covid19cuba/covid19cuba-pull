@@ -1,0 +1,24 @@
+name: Pull2
+
+on:
+
+  schedule:
+    - cron: '*/2 * * * *'
+
+jobs:
+  Pull2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Pull2
+      run: |
+        git config --global user.name 'leynier'
+        git config --global user.email 'leynier41@gmail.com'
+        git clone https://leynier:${{ secrets.PASSWORD }}@github.com/covid19cuba/covid19cubadata.github.io.git
+        cd "covid19cubadata.github.io"
+        git remote add original https://github.com/covid19cubadata/covid19cubadata.github.io.git
+        git fetch original master
+        git merge original/master
+        git push origin default
