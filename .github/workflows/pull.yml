@@ -1,10 +1,13 @@
 name: Pull
 
 on:
+
+  schedule:
+    - cron: '*/2 * * * *'
+
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
   Pull:
