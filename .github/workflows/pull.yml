@@ -1,4 +1,4 @@
-name: Pull
+name: Pull1
 
 on:
 
@@ -6,13 +6,13 @@ on:
     - cron: '*/2 * * * *'
 
 jobs:
-  Pull:
+  Pull1:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Pull
+    - name: Pull1
       run: |
         git config --global user.name 'leynier'
         git config --global user.email 'leynier41@gmail.com'
