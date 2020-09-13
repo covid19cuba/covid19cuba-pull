@@ -21,4 +21,4 @@ jobs:
         git remote add original https://github.com/covid19cubadata/covid19cubadata.github.io.git
         git fetch original master
         git merge original/master
-        git push origin default
+        git push origin master
