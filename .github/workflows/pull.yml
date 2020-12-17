@@ -3,7 +3,7 @@ name: Pull
 on:
 
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 
   push:
     branches:
@@ -26,3 +26,7 @@ jobs:
         git fetch original master
         git merge original/master
         git push origin master
+
+    - name: Sync bot
+      run: |
+        curl -XPOST -H "STOKEN: ${{ secrets.STOKEN }}" "https://covid19cuba-apijssync.herokuapp.com/sync"
