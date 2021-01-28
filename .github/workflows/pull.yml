@@ -29,4 +29,4 @@ jobs:
 
     - name: Sync bot
       run: |
-        curl -XPOST -H "STOKEN: ${{ secrets.STOKEN }}" "https://covid19cuba-apijssync.herokuapp.com/sync"
+        curl -XPOST -H "STOKEN: ${{ secrets.STOKEN }}" "https://covid19cuba-apijssync.codestrange.me/sync"
