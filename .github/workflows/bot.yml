@@ -1,0 +1,23 @@
+name: Bot Sync
+
+on:
+
+  schedule:
+    - cron: '0 * * * *'
+
+  push:
+    branches:
+      - master
+  
+  workflow_dispatch:
+
+jobs:
+  Sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Sync bot
+      run: |
+        curl -XPOST -H "STOKEN: ${{ secrets.STOKEN }}" "https://covid19cuba-apijssync.herokuapp.com/sync"
